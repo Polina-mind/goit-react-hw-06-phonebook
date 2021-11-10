@@ -4,33 +4,22 @@ import Contacts from '../components/Contacts';
 import Filter from '../components/Filter';
 
 class ContactsView extends Component {
-  state = {
-    // contacts: [
-    //   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    //   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    //   { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    //   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    // ],
-    // filteredContacts: [],
-    // filter: '',
-  };
+  // componentDidMount() {
+  //   const contacts = localStorage.getItem('contacts');
+  //   const parsedContacts = JSON.parse(contacts);
 
-  componentDidMount() {
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
+  //   if (parsedContacts) {
+  //     this.setState({ contacts: parsedContacts });
+  //   }
+  // }
 
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const nextContacts = this.state.contacts;
-    const prevContacts = prevState.contacts;
-    if (nextContacts !== prevContacts) {
-      localStorage.setItem('contacts', JSON.stringify(nextContacts));
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   const nextContacts = this.state.contacts;
+  //   const prevContacts = prevState.contacts;
+  //   if (nextContacts !== prevContacts) {
+  //     localStorage.setItem('contacts', JSON.stringify(nextContacts));
+  //   }
+  // }
 
   //   addContact = ({ name, number }) => {
   //     const contact = {
@@ -71,24 +60,15 @@ class ContactsView extends Component {
   // };
 
   render() {
-    const { contacts, filteredContacts, filter } = this.state;
-
     return (
       <>
         <h2 className="Title">Phonebook</h2>
-        <Form
-        // onSubmit={this.addContact}
-        ></Form>
+        <Form></Form>
 
         <h2 className="Title">Contacts</h2>
-        <Filter
-        // onInputFilter={this.onInputFilter}
-        ></Filter>
+        <Filter></Filter>
 
-        <Contacts
-          contacts={contacts}
-          // onDelete={this.deleteContact}
-        ></Contacts>
+        <Contacts></Contacts>
       </>
     );
   }
