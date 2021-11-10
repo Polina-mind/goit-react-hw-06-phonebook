@@ -21,44 +21,6 @@ class ContactsView extends Component {
   //   }
   // }
 
-  //   addContact = ({ name, number }) => {
-  //     const contact = {
-  //       id: uuidv4(),
-  //       name: name,
-  //       number: number,
-  //     };
-
-  //     if (name !== '' && number !== '') {
-  //       const namesArr = this.state.contacts.map(({ name }) => name);
-  //       if (namesArr.includes(contact.name)) {
-  //         alert('Contact already exist');
-  //         return;
-  //       }
-  //       this.setState(({ contacts }) => ({
-  //         contacts: [contact, ...contacts],
-  //       }));
-  //     }
-  //   };
-
-  //   deleteContact = id => {
-  //     const { contacts, filteredContacts } = this.state;
-
-  //     this.setState({
-  //       contacts: contacts.filter(contact => contact.id !== id),
-  //       filteredContacts: filteredContacts.filter(contact => contact.id !== id),
-  //     });
-  //   };
-
-  // onInputFilter = filter => {
-  //   const contacts = this.state.contacts;
-
-  //   const filteredContacts = contacts.filter(({ name }) =>
-  //     name.toLowerCase().includes(filter.toLowerCase()),
-  //   );
-
-  //   this.setState({ filteredContacts: filteredContacts, filter: filter });
-  // };
-
   render() {
     return (
       <>
