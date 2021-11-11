@@ -18,8 +18,13 @@ class Form extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state);
-    this.setState({ name: '', number: '' });
+    if (this.state.name !== '' && this.state.number !== '') {
+      this.props.onSubmit(this.state);
+      this.setState({ name: '', number: '' });
+      return;
+    }
+
+    alert('No name or number to save!');
   };
 
   render() {
@@ -66,24 +71,6 @@ class Form extends Component {
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
-
-// const checkName = (contacts, newName, number) => {
-//   if (newName !== '' && number !== '') {
-//     contacts.map(({ name }) => {
-//       if (name.toLowerCase().includes(newName.toLowerCase())) {
-//         return alert('Contact already exist');
-//       }
-//       return addContact(name, number);
-//     });
-//   }
-// };
-
-// const mapDispatchToProps = ({ contacts: { items } }) => {
-//   console.log(items);
-//   return {
-//     onSubmit: (name, number) => checkName(items, name, number),
-//   };
-// };
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: (name, number) => dispatch(addContact(name, number)),

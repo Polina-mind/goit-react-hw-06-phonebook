@@ -1,15 +1,10 @@
-// import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { changeFilter } from '../../redux/actions';
 import './Filter.css';
 
 const Filter = ({ filter, handleChange }) => {
-  // handleChange = event => {
-  //   this.setState({ filter: event.target.value });
-  //   this.props.onInputFilter(event.target.value);
-  // };
-
   return (
     <div>
       <p className="FindTitle">Find contacts by name</p>
