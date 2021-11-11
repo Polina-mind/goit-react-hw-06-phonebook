@@ -1,8 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { createAction } from '@reduxjs/toolkit';
-import { ADD, DELETE, CHANGE_FILTER } from './types';
 
-const addContact = createAction(ADD, ({ name, number }) => ({
+const addContact = createAction('contacts/Add', ({ name, number }) => ({
   payload: {
     id: uuidv4(),
     name: name,
@@ -10,8 +9,8 @@ const addContact = createAction(ADD, ({ name, number }) => ({
   },
 }));
 
-const deleteContact = createAction(DELETE);
+const deleteContact = createAction('contacts/Delete');
 
-const changeFilter = createAction(CHANGE_FILTER);
+const changeFilter = createAction('contacts/ChangeFilter');
 
 export { addContact, deleteContact, changeFilter };
