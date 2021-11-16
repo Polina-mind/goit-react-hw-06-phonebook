@@ -5,6 +5,10 @@ import { addContact } from '../../redux/actions';
 import './Form.css';
 
 class Form extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -67,10 +71,6 @@ class Form extends Component {
     );
   }
 }
-
-Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: (name, number) => dispatch(addContact(name, number)),
