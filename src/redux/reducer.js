@@ -4,11 +4,11 @@ import { addContact, deleteContact, changeFilter } from './actions';
 
 const items = createReducer([], {
   [addContact]: (state, { payload }) => {
-    const sameName = state.map(({ name }) =>
-      name.toLowerCase().includes(payload.name.toLowerCase()),
+    const sameName = state.filter(
+      ({ name }) => name.toLowerCase() === payload.name.toLowerCase(),
     );
 
-    if (sameName.includes(true)) {
+    if (sameName.length > 0) {
       alert('Contact already exist');
       return [...state];
     } else {
